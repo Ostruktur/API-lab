@@ -1,0 +1,72 @@
+Introduction
+Each group selects an API/library to investigate, identifying what is interesting about it for interaction designers, and creating examples that make use of it. Each group reports their findings with annotated code samples and a live demo (HP 2; LO 3 & 4)
+Your assignment is to find a library or data set, exposed by an API, research and explore the capabilities of the library or data set – what can it be used for, how to use the API and how it could augment your plant project – and then present your findings to the class. Accordingly, you are working in the same groups as your flower project groups. 
+
+Notice, the assignment is not to create final design solutions but to do implementation prototyping for your plant project. 
+
+The Assignment
+The assignment has four “parts”:
+
+1: Get Started
+Find a Library or Data set
+You can google or look on Clint Heyer’s site for inspiration: http://ixd-res.clintio.us/web-ii/ (Links to an external site.)
+ (Links to an external site.)Create a GitHub repository
+Have it checked out on all computers! I expect commits evenly distributed between all members of the groups*.
+Pick a library with good documentation, lots of examples and frequent updates. You are not allowed to use jQuery or libraries used in the Coding Trains Videos we used in class. If you decide to use an API not featured on Clint's site please run it by me. 
+
+*Notice, members with very few or completely without any commits will not pass.
+
+2: Exploring the API
+Explore how you can use the library or data set; what it can be used for and how to use the API.
+
+Try examples/tutorials
+Each member tries at least two examples from the API documentation and makes small experiments.
+Extend one example into a prototype
+Take one of the examples that you experimented with, copy it and extend it into a prototype for you plant project. Each member is expected to extend one example into a prototype.
+Make a folder for each example and prototype.
+
+3: Presentations
+Friday the 12th of March
+In your presentation you describe the API, your work, each person’s contributions and your reflections. Your reflections should be on how the library can be used for prototyping or in design more generally.
+
+API (3 – 5 min.)
+Introduce the library or data set you have been working with.
+Prototypes (10 min.)
+Demo the prototypes you made.
+Reflections (3 – 5min.)
+What could other designers get out of this library/data set, what do they need to do to get started using the API.
+4) Hand-in
+Friday the 12th of March
+Each group hand a link to the GitHub repository used on Canvas.
+
+GitHub Repository
+Submit a link to the repository of the API Lab assignment on Canvas. The  repository should contain:
+
+All your code
+The code should be commented
+A general README.md
+Explaining the project:
+What the project does
+Describe your project
+Why the project is useful
+What is the project is exploring (remember you are prototyping)
+How users can get started with the project
+How to use your code
+Who maintains and contributes to the project
+Who was responsible
+A folder for each example and prototype
+A README.md for each example and prototype
+Do not make changes to the repository after you have handed it in. Doing so is considered cheating.
+
+Assessment
+To pass the assignment you need to show you fulfill the following learning goal:
+
+Each group selects an API/library to investigate, identifying what is interesting about it for interaction designers, and creating examples that make use of it. Each group reports their findings with annotated code samples and a live demo (HP 2; LO 3 & 4)
+
+LO3 Independently locate and use a third-party programming library or API relevant to interactive technology
+
+LO4 Create cross-device interactive experiences
+
+Specifically you need to locate a library (on your own), try 2 coding examples each and extend 1 example into a prototype each. The code should be commented, where the examples are from should be clear and the requirements to the hand-in described in part no. 4 (Hand-in) of the assignment section should be fulfilled. 
+
+Identifying what is interesting for interaction designers and other reflections should be explained during the presentation.
