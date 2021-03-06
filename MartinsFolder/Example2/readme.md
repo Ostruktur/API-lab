@@ -2,5 +2,7 @@ In example 2 i will try to play around with D# and "Radial Tidy Tree" with i see
 This layout and API-part, seem to be suited to this idea, as it seem like i can load it with data from an array and database of my own choice.
 
 This could work well with the concept as a whole, seeing different events in the plantslife being tagged and cataloged in the array, this could be done both automatically and by the user.
+And being able to section of different events or data-points in the liftime of a plant, by tags or other markers seems promising to use in the concept
+
 
 //MH2021-03-06
