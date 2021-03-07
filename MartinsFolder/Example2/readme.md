@@ -6,3 +6,13 @@ And being able to section of different events or data-points in the liftime of a
 
 
 //MH2021-03-06
+
+
+LICENSE#
+Released under the GNU General Public License, version 3.
+
+Source:
+https://observablehq.com/@d3/radial-tidy-tree
+
+Fork:
+https://bl.ocks.org/FrissAnalytics/ffbd3cb71848616957cd4c0f41738aec
