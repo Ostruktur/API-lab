@@ -4,3 +4,10 @@ And i really like the look and feel of the zoom-ins, jumping between data-points
 It could lend a very nice feel to the fluiditiy of our concept if it works out and hopefully it will help with displaying our affordances to our users in a clear and concise way.
 
 //MH 2021-03-06
+
+((A Pen created on CodePen.io. Original URL: [https://codepen.io/splarty/pen/oLPEmy](https://codepen.io/splarty/pen/oLPEmy).))
+
+Found a good example to work with ("https://codepen.io/splarty/pen/oLPEmy") using data from football-players to feed into the D3-visualization, this seems like a good ground for me to use my own .csv file with data.
+
+Managed to post ex.1 using a new template to work from, will probable push this as prototype v.
+
