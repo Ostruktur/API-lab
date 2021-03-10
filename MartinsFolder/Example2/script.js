@@ -1,3 +1,7 @@
+//Here i will update and change the "database" to suit our need of plants and events, thinking this could be used for 
+//the interaction-timeline of the plant, showcasing different events and tags from the plants lifetime
+
+
 var pubs =
 {
     "name": "AUT-1",

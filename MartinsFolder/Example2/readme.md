@@ -21,3 +21,5 @@ Found new template to work from:
 A Pen created on CodePen.io. Original URL: [https://codepen.io/fernoftheandes/pen/pcoFz](https://codepen.io/fernoftheandes/pen/pcoFz).
 
 Seems like a great beginning, has some if not all the basic parts needed to start experimenting.
+
+Will have to try to manage the size of the circles in this tree, would be nice to have them the size of our "tokens" from the concept, so that we could have the "token" transition between the nodes and activate/collapse them
