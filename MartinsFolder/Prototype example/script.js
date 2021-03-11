@@ -25,7 +25,7 @@ var pubs =
             ]
         },
         {
-            "name": "PUB-2","children": [
+            "name": "Memories","children": [
                 {"name": "AUT-21"},
                 {"name": "AUT-22"},
                 {"name": "AUT-23"},
@@ -43,9 +43,9 @@ var pubs =
                 ]}
             ]
         },
-        {"name": "PUB-3"},
+        {"name": "Growth"},
         {
-            "name": "PUB-4","children": [
+            "name": "Height","children": [
                 {"name": "AUT-41"},
                 {"name": "AUT-42"},
                 {"name": "AUT-43","children": [
@@ -61,7 +61,7 @@ var pubs =
             ]
         },
         {
-            "name": "PUB-5","children": [
+            "name": "Seedlings","children": [
                 {"name": "AUT-51","children":[
                     {"name": "AFF-511"},
                     {"name": "AFF-512"},
@@ -92,7 +92,7 @@ var pubs =
             ]
         },
         {
-            "name": "PUB-6","children": [
+            "name": "Events","children": [
               {"name": "AUT-61","children":[
                   {"name": "AFF-611"},
                   {"name": "AFF-612"},
