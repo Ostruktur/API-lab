@@ -14,3 +14,5 @@ Managed to post ex.1 using a new template to work from, will probable push this 
 Seems promising and i should be able to substitute the .csv with a plantbased or write my own .csv to reach the goal
 will start playing around with the layout and style aswell.
 
+I have managed to load a local Monstera.csv file and im getting some small results, it can read the "Family" - value from the file, but nothing much else at the moment.
+

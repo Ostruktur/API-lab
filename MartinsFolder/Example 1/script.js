@@ -18,7 +18,7 @@ var svg = d3.select("#chart").append("svg").attr("width", diameter).attr("height
 
 
 //Here i will try to find an online plantbase API to tie into or try creating a more limited dataset on my own.
-d3.csv("https://s3-us-west-2.amazonaws.com/s.cdpn.io/565729/Football_Data.csv", function(error, data) {
+d3.csv("Monstera.csv", function(error, data) {
 
 _.each(data, function(element, index, list) {
     element.pop = +element.pop;
@@ -64,7 +64,7 @@ function genJSON(csvData, groups) {
 // Unlike before, this controls the circles.
 // You don't change any other options.
 // This i will try to change to suit our concepts needs, plantbased database or writing my own
-var preppedData = genJSON(data, ['year', 'assists', 'player']);
+var preppedData = genJSON(data, ['Family', 'Genus hybrid marker', 'Genus']);
 
 
 
@@ -92,8 +92,8 @@ var circle = svg.selectAll("circle").data(nodes).enter().append("circle").attr("
 }).style("font-size", function(d) {
     return d.parent === preppedData ? "24px" : "6px";
 }).text(function(d) {
-    if (typeof d.player != 'undefined'){
-        var textName = d.player;
+    if (typeof d.genus != 'undefined'){
+        var textName = d.genus;
     }else{
     var textName = d.name; 
     }
