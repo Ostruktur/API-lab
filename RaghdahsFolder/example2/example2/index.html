@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+    <script src="main.js" language="JavaScript"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+</head>
+<body>
+<div align="center" style="width: 600px;">
+	<svg id="stacker5" width="560" height="100" style="font-family: 'DotGothic16', sans-serif;; font-weight: bold;" onclick="stacker5.update((Math.random()*100));"></svg><br/>
+</div>
+<script language="JavaScript">
+    
+    var settings5 = barStackerDefaultSettings();
+    settings5.vertical = false;
+    settings5.valuePrefix = "% ";
+    settings5.color = "#5F9EA0";
+    var stacker5 = loadBarStacker("stacker5", "plant energy", 45, settings5);
+  
+</script>
+</body>
+</html>

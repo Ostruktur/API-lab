@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="green"> </div>
+    <!-- <a href="http://www.freepik.com">Designed by rawpixel.com / Freepik</a>-->
+    <div>
+        <svg id="fillgauge2" width="19%" height="200"></svg>
+        <svg id="fillgauge3" width="19%" height="200"></svg>
+        <svg id="fillgauge4" width="19%" height="200"></svg>
+        <svg id="fillgauge5" width="19%" height="200"></svg>
+        </div>
+        
+        <script language="JavaScript">
+            
+            var config2 = liquidFillGaugeDefaultSettings();
+            config2.circleColor = "#ADD8E6";
+            config2.textColor = "#87CEFA";
+            config2.waveTextColor = "#00FFFF";
+            config2.waveColor = "#48D1CC";
+            config2.circleThickness = 0.15;
+            config2.circleFillGap = 0.1;
+            config2.textVertPosition = 0.8;
+            config2.waveHeight = 0.4;
+            var gauge3 = loadLiquidFillGauge("fillgauge3", 60.1, config2);
+            var config3 = liquidFillGaugeDefaultSettings();
+            config3.textVertPosition = 0.8;
+            config3.waveHeight = 0.2;
+            config3.waveAnimate = false;
+            var gauge4 = loadLiquidFillGauge("fillgauge4", 50, config3);
+            var config4 = liquidFillGaugeDefaultSettings();
+            config4.circleThickness = 0.15;
+            config4.circleColor = "#EEE8AA";
+            config4.textColor = "#FFD700";
+            config4.waveTextColor = "#FFFFCC";
+            config4.waveColor = "#FFFF66";
+            
+            var gauge5 = loadLiquidFillGauge("fillgauge5", 60.44, config4);
+          
+            
+        
+            function NewValue(){
+                if(Math.random() > .5){
+                    return Math.round(Math.random()*100);
+                } else {
+                    return (Math.random()*100).toFixed(1);
+                }
+            }
+        </script>
+
+</body>
+</html>

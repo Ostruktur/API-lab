@@ -1,0 +1,17 @@
+body {
+    background-image: url(../prototype/84542.jpg);
+    background-size: cover;
+}
+.green {
+    width: 260px;
+    height: 260px;
+    background-image: url(../prototype/img/green.gif);
+    background-size: cover;
+    margin-top: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-left: 0;
+}
+.liquidFillGaugeText {
+    font-family: 'Akaya Telivigala', cursive;
+}
