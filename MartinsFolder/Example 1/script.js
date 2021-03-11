@@ -76,6 +76,8 @@ var focus = preppedData,
 
 console.log(nodes);
 
+
+
 var circle = svg.selectAll("circle").data(nodes).enter().append("circle").attr("class", function(d) {
     return d.parent ? d.children ? "node" : "node node--leaf" : "node node--preppedData";
 }).style("fill", function(d) {
@@ -93,7 +95,7 @@ var circle = svg.selectAll("circle").data(nodes).enter().append("circle").attr("
     return d.parent === preppedData ? "24px" : "6px";
 }).text(function(d) {
     if (typeof d.genus != 'undefined'){
-        var textName = d.genus;
+        var textName = d.name;
     }else{
     var textName = d.name; 
     }
@@ -133,6 +135,7 @@ function zoom(d) {
             this.style.display = "inline";
     });
 }
+
 
 function zoomTo(v) {
     var k = diameter / v[2];

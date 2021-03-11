@@ -115,7 +115,7 @@ var pubs =
     ]
 };
 
-var diameter = 800;
+var diameter = 1400;
 
 var margin = {top: 20, right: 120, bottom: 20, left: 120},
     width = diameter,
@@ -127,7 +127,7 @@ var i = 0,
 
 var tree = d3.layout.tree()
     .size([360, diameter / 2 + 10])
-    .separation(function(a, b) { return (a.parent == b.parent ? 1 : 5) / a.depth; });
+    .separation(function(a, b) { return (a.parent == b.parent ? 1 : 3) / a.depth; });
 
 var diagonal = d3.svg.diagonal.radial()
     .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
@@ -140,7 +140,7 @@ var svg = d3.select("body").append("svg")
 
 root = pubs;
 root.x0 = height / 2;
-root.y0 = 4;
+root.y0 = 5;
 
 //root.children.forEach(collapse); // start with all children collapsed
 update(root);
@@ -154,7 +154,7 @@ function update(source) {
       links = tree.links(nodes);
 
   // Normalize for fixed-depth.
-  nodes.forEach(function(d) { d.y = d.depth * 80; });
+  nodes.forEach(function(d) { d.y = d.depth * 180; });
 
   // Update the nodes…
   var node = svg.selectAll("g.node")
