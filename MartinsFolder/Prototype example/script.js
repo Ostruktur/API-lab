@@ -145,7 +145,7 @@ root.y0 = 5;
 //root.children.forEach(collapse); // start with all children collapsed
 update(root);
 
-d3.select(self.frameElement).style("height", "800px");
+d3.select(self.frameElement).style("height", "1400px");
 
 function update(source) {
 
@@ -154,7 +154,7 @@ function update(source) {
       links = tree.links(nodes);
 
   // Normalize for fixed-depth.
-  nodes.forEach(function(d) { d.y = d.depth * 180; });
+  nodes.forEach(function(d) { d.y = d.depth * 200; });
 
   // Update the nodes…
   var node = svg.selectAll("g.node")
@@ -163,7 +163,7 @@ function update(source) {
   // Enter any new nodes at the parent's previous position.
   var nodeEnter = node.enter().append("g")
       .attr("class", "node")
-      //.attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+      .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
       .on("click", click);
 
   nodeEnter.append("circle")
@@ -174,7 +174,7 @@ function update(source) {
       .attr("x", 10)
       .attr("dy", ".35em")
       .attr("text-anchor", "start")
-      //.attr("transform", function(d) { return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (d.name.length * 8.5)  + ")"; })
+      .attr("transform", function(d) { return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (d.name.length * 8.5)  + ")"; })
       .text(function(d) { return d.name; })
       .style("fill-opacity", 1e-6);
 
@@ -191,7 +191,7 @@ function update(source) {
       .style("fill-opacity", 1)
       .attr("transform", function(d) { return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (d.name.length + 50)  + ")"; });
 
-  // TODO: appropriate transform
+  //Transitions i'm not really sure about, will try some different stuff
   var nodeExit = node.exit().transition()
       .duration(duration)
       //.attr("transform", function(d) { return "diagonal(" + source.y + "," + source.x + ")"; })
@@ -229,7 +229,7 @@ function update(source) {
       })
       .remove();
 
-  // Stash the old positions for transition.
+  // Save old positions 
   nodes.forEach(function(d) {
     d.x0 = d.x;
     d.y0 = d.y;
