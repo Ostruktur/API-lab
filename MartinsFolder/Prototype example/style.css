@@ -3,18 +3,20 @@
   }
   
   .node circle {
-    fill: #fff;
-    stroke: steelblue;
+    fill: rgba(13, 211, 46, 0.404);
+    stroke: rgb(49, 119, 177);
     stroke-width: 1.5px;
     r: 50px;
   }
   
   .node text {
-    font: 10px sans-serif;
+    align-content: center;
+    font: 15px sans-serif;
+    font-weight: bold;
   }
   
   .link {
     fill: none;
-    stroke: #ccc;
+    stroke: rgb(145, 12, 12);
     stroke-width: 2.5px;
   }

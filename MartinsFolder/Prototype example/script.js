@@ -4,23 +4,23 @@
 
 var pubs =
 {
-    "name": "AUT-1",
+    "name": "Monstera",
     "children": [
         {
             "name": "Incidents","children": [
-                {"name": "AUT-11","children": [
-                    {"name": "AFF-111"},
-                    {"name": "AFF-112"}
+                {"name": "Draugt","children": [
+                    {"name": "Dried out"},
+                    {"name": "Dried out"}
                 ]},
-                {"name": "AUT-12","children": [
-                    {"name": "AFF-121"}
+                {"name": "Water sick","children": [
+                    {"name": "Moldy"}
                 ]},
-                {"name": "AUT-13","children": [
-                    {"name": "AFF-131"},
-                    {"name": "AFF-132"}
+                {"name": "Infections","children": [
+                    {"name": "Mites"},
+                    {"name": "Mites"}
                 ]},
-                {"name": "AUT-14","children": [
-                    {"name": "AFF-141"}
+                {"name": "Replanted","children": [
+                    {"name": "Change of soil"}
                 ]}
             ]
         },
