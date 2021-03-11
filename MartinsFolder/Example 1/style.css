@@ -44,7 +44,7 @@ body {
   }
   
   .node--leaf {
-    fill: yellow;
+    fill: rgb(6, 150, 37);
   }
   
   .label {
