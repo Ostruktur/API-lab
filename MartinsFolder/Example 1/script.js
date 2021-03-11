@@ -1,4 +1,4 @@
-// This is a more complicated version.
+
 
 // The Dataset consists of:
 // year,player,appearance,goals,goals_per_game, assists,assists_per_game  
@@ -16,9 +16,7 @@ return d.assists;
 
 var svg = d3.select("#chart").append("svg").attr("width", diameter).attr("height", diameter).append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
 
-//*************************************************
-// GET THE CSV DATA
-//*************************************************
+
 //Here i will try to find an online plantbase API to tie into or try creating a more limited dataset on my own.
 d3.csv("https://s3-us-west-2.amazonaws.com/s.cdpn.io/565729/Football_Data.csv", function(error, data) {
 
@@ -26,10 +24,10 @@ _.each(data, function(element, index, list) {
     element.pop = +element.pop;
 });
 
-//*************************************************
+
 // THE FUNCTION to turn your data from CSV into
 // nested data object (this does the work for you)
-//*************************************************
+
 function genJSON(csvData, groups) {
 
     var genGroups = function(data) {
@@ -60,18 +58,18 @@ function genJSON(csvData, groups) {
     return nest({}, 0);
 }
 
-//*************************************************
+
 // CALL FUNCTION WITH ARRAY OF GROUPS
-//*************************************************
+
 // Unlike before, this controls the circles.
 // You don't change any other options.
 // This i will try to change to suit our concepts needs, plantbased database or writing my own
 var preppedData = genJSON(data, ['year', 'assists', 'player']);
 
 
-//*************************************************
+
 // YOUR DATA VISUALIZATION CODE HERE
-//*************************************************
+
 var focus = preppedData,
     nodes = pack.nodes(preppedData),
     view;

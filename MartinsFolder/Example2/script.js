@@ -7,7 +7,7 @@ var pubs =
     "name": "AUT-1",
     "children": [
         {
-            "name": "PUB-1","children": [
+            "name": "Incidents","children": [
                 {"name": "AUT-11","children": [
                     {"name": "AFF-111"},
                     {"name": "AFF-112"}
@@ -126,8 +126,8 @@ var i = 0,
     root;
 
 var tree = d3.layout.tree()
-    .size([360, diameter / 2 - 80])
-    .separation(function(a, b) { return (a.parent == b.parent ? 1 : 10) / a.depth; });
+    .size([360, diameter / 2 + 10])
+    .separation(function(a, b) { return (a.parent == b.parent ? 1 : 5) / a.depth; });
 
 var diagonal = d3.svg.diagonal.radial()
     .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
@@ -140,7 +140,7 @@ var svg = d3.select("body").append("svg")
 
 root = pubs;
 root.x0 = height / 2;
-root.y0 = 0;
+root.y0 = 4;
 
 //root.children.forEach(collapse); // start with all children collapsed
 update(root);
