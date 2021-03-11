@@ -4,7 +4,7 @@
   
   .node circle {
     fill: rgba(13, 211, 46, 0.404);
-    stroke: rgb(49, 119, 177);
+    stroke: rgb(10, 39, 1);
     stroke-width: 1.5px;
     r: 50px;
   }
@@ -17,6 +17,6 @@
   
   .link {
     fill: none;
-    stroke: rgb(145, 12, 12);
+    stroke: rgb(6, 129, 37);
     stroke-width: 2.5px;
   }
