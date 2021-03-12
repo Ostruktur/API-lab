@@ -84,10 +84,10 @@ var pubs =
                       {"name": "Low sun"},
                   ]}
               ]},
-              {"name": "AUT-62"},
-              {"name": "AUT-63"},
-              {"name": "AUT-64"},
-              {"name": "AUT-65"},
+              {"name": "Unknown event"},
+              {"name": "Unknown event"},
+              {"name": "Unknown event"},
+              {"name": "Unknown event"},
              
             ]
         }
