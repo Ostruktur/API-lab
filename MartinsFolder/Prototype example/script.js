@@ -26,32 +26,32 @@ var pubs =
         },
         {
             "name": "Memories","children": [
-                {"name": "AUT-21"},
-                {"name": "AUT-22"},
-                {"name": "AUT-23"},
-                {"name": "AUT-26"},
-                {"name": "AUT-27"},
-                {"name": "AUT-28","children":[
-                    {"name": "AFF-281"},
-                    {"name": "AFF-282"},
-                    {"name": "AFF-285"},
-                    {"name": "AFF-286"}
+                {"name": "Good day"},
+                {"name": "Bad day"},
+                {"name": "Good day"},
+                {"name": "Good day"},
+                {"name": "Good day"},
+                {"name": "Winter","children":[
+                    {"name": "Low sun"},
+                    {"name": "Low Sun"},
+                    {"name": "Very cold"},
+                    {"name": "Darkness"}
                 ]}
             ]
         },
         {"name": "Growth"},
         {
             "name": "Height","children": [
-                {"name": "25cm"},
-                {"name": "AUT-42"},
-                {"name": "AUT-43","children": [
-                    {"name": "AFF-431"},
-                    {"name": "AFF-434","children":[
-                        {"name": "ADD-4341"},
-                        {"name": "ADD-4342"},
+                {"name": "Tall"},
+                {"name": "Taller"},
+                {"name": "Tallest","children": [
+                    {"name": "Small"},
+                    {"name": "Medium","children":[
+                        {"name": "Wider"},
+                        {"name": "Widest"},
                     ]}
                 ]},
-                {"name": "AUT-44"}
+                {"name": "Super tall"}
             ]
         },
         {
@@ -77,11 +77,11 @@ var pubs =
         },
         {
             "name": "Events","children": [
-              {"name": "AUT-61","children":[
-                  {"name": "AFF-611"},
-                  {"name": "AFF-614","children":[
-                      {"name": "ADD-6141"},
-                      {"name": "ADD-6142"},
+              {"name": "Darkness","children":[
+                  {"name": "Darkness"},
+                  {"name": "Wintertime","children":[
+                      {"name": "Darkness"},
+                      {"name": "Low sun"},
                   ]}
               ]},
               {"name": "AUT-62"},
@@ -94,9 +94,9 @@ var pubs =
     ]
 };
 //Usable space
-let diameter = 1400;
+let diameter = 1600;
 
-let margin = {top: 20, right: 120, bottom: 20, left: 120},
+let margin = {top: 5, right: 120, bottom: 20, left: 120},
     width = diameter,
     height = diameter;
     
