@@ -6,4 +6,4 @@ I will try to use one of the to examples to try to make it into oen pice of our 
 
 Decided to go ahead with ex.2 as it shows most promise and its the most fun at the moment to work with.
 
-Ive started looking into adding pictures in each of the nodes or at least in the parent nodes, to illustrate the plants in question and the different events during its lifetime
+Ive started looking into adding pictures in each of the nodes or at least in the parent nodes, to illustrate the plants in question and the different events during its lifetime, but i would need to create a better database or a full .csv-file to read from
