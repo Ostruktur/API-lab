@@ -1,0 +1,42 @@
+body {
+  background-image: url('/MartinsFolder/Assets/Image\ 11.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+
+.node {
+    cursor: pointer;
+   
+  }
+  
+  .node circle {
+    fill: #82c9ce;
+    stroke: rgb(10, 39, 1);
+    stroke-width: 1.5px;
+    /* controlling the size of the nodes */
+    r: 50px;
+  }
+  
+  .node text {
+    fill: #733430;
+    align-content: center;
+  /*Trying to align text correctly in the middle of the nodes*/
+  /*some nodes work with the "middle" and some with "right" set as anchor*/
+    text-anchor: middle;
+    font: 18px poppins;
+    font-weight: bold; 
+    
+    
+  }
+  .node:hover{
+    stroke-width: 7px;
+    opacity: 1;
+  }
+
+  .link {
+    fill: none;
+    stroke: #36cf45;
+    stroke-width: 5px;
+  }

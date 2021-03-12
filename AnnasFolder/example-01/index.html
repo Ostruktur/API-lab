@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
-    <script src=""></script>
-  </head>
+<meta charset="utf-8">
+<title>Donut Chart</title>
+<link rel="stylesheet" type="text/css" href="./inspector.css">
+<body>
+<script type="module">
 
-  <body>
-    <svg id="svg_donut" width="600" height="400"></svg>
-  </body>
-</html>
+import define from "./index.js";
+import {Runtime, Library, Inspector} from "./runtime.js";
+
+const runtime = new Runtime();
+const main = runtime.module(define, Inspector.into(document.body));
+
+</script>
