@@ -46,7 +46,7 @@ var pubs =
         {"name": "Growth"},
         {
             "name": "Height","children": [
-                {"name": "AUT-41"},
+                {"name": "25cm"},
                 {"name": "AUT-42"},
                 {"name": "AUT-43","children": [
                     {"name": "AFF-431"},
@@ -62,33 +62,24 @@ var pubs =
         },
         {
             "name": "Seedlings","children": [
-                {"name": "AUT-51","children":[
-                    {"name": "AFF-511"},
-                    {"name": "AFF-512"},
-                    {"name": "AFF-513"},
-                    {"name": "AFF-514"},
-                    {"name": "AFF-515"},
-                    {"name": "AFF-516"}
+                {"name": "M.Smith 5/11-1978","children":[
+                    {"name": "J.Doe 12/4 1979"},
+                    {"name": "H.Unter 25/5 1979"},
+                    {"name": "E.Nigel 1/6 1979"},
+                    {"name": "A.Hunter 4/4 1980"},
+                    {"name": "M.Thorn 17/8 1980"},
+                    {"name": "E.West 19/11 1981"}
                 ]},
-                {"name": "AUT-52"},
-                {"name": "AUT-53"},
-                {"name": "AUT-54"},
-                {"name": "AUT-55","children":[
-                    {"name": "AFF-551"},
-                    {"name": "AFF-552"},
-                    {"name": "AFF-553"},
-                    {"name": "AFF-554"}
+                {"name": "H.Hunter 1/5 1982"},
+                {"name": "J.Snark 12/4 1985"},
+                {"name": "O.Issa 8/9 1989"},
+                {"name": "S.Hama 19/2 1995","children":[
+                    {"name": "E.Oliver 11/11 1996"},
+                    {"name": "H.Nue 18/7 1998"},
+                    {"name": "Iggy 24/10 1999"},
+                    {"name": "J.Doe 12/4 2000"}
                 ]},
-                {"name": "AUT-56"},
-                {"name": "AUT-57"},
-                {"name": "AUT-58"},
-                {"name": "AUT-59"},
-                {"name": "AUT-591"},
-                {"name": "AUT-592"},
-                {"name": "AUT-593"},
-                {"name": "AUT-594"},
-                {"name": "AUT-595"},
-                {"name": "AUT-596"}
+               
             ]
         },
         {
@@ -114,7 +105,7 @@ var pubs =
         }
     ]
 };
-
+//Usable space
 var diameter = 1400;
 
 var margin = {top: 20, right: 120, bottom: 20, left: 120},
@@ -126,7 +117,7 @@ var i = 0,
     root;
 
 var tree = d3.layout.tree()
-    .size([360, diameter / 2 + 10])
+    .size([270, diameter / 2 - 10])
     .separation(function(a, b) { return (a.parent == b.parent ? 1 : 3) / a.depth; });
 
 var diagonal = d3.svg.diagonal.radial()
@@ -142,21 +133,21 @@ root = pubs;
 root.x0 = height / 2;
 root.y0 = 5;
 
-//root.children.forEach(collapse); // start with all children collapsed
+root.children.forEach(collapse); // start with all children collapsed
 update(root);
 
 d3.select(self.frameElement).style("height", "1400px");
 
 function update(source) {
 
-  // Compute the new tree layout.
+  // Calculate new tree layout.
   var nodes = tree.nodes(root),
       links = tree.links(nodes);
 
   // Normalize for fixed-depth.
   nodes.forEach(function(d) { d.y = d.depth * 200; });
 
-  // Update the nodes…
+  // Updating nodes
   var node = svg.selectAll("g.node")
       .data(nodes, function(d) { return d.id || (d.id = ++i); });
 
@@ -177,6 +168,10 @@ function update(source) {
       .attr("transform", function(d) { return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (d.name.length * 8.5)  + ")"; })
       .text(function(d) { return d.name; })
       .style("fill-opacity", 1e-6);
+
+    //Testing out hover over effect and onClick-event
+    //Did not work out the way i thought it would
+
 
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()

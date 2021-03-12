@@ -1,18 +1,31 @@
+body {
+  background-image: url('/MartinsFolder/Assets/Image\ 11.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+
 .node {
     cursor: pointer;
+   
   }
   
   .node circle {
     fill: rgba(13, 211, 46, 0.404);
     stroke: rgb(10, 39, 1);
     stroke-width: 1.5px;
+    box-shadow: 10px 5px 5px indigo;
     r: 50px;
   }
   
   .node text {
+    fill: rgb(109, 106, 106);
     align-content: center;
-    font: 15px sans-serif;
-    font-weight: bold;
+    font: 15px poppins;
+    font-weight: bold; 
+    
+    
   }
   
   .link {
