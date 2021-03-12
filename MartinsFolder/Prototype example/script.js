@@ -26,113 +26,92 @@ var pubs =
         },
         {
             "name": "Memories","children": [
-                {"name": "AUT-21"},
-                {"name": "AUT-22"},
-                {"name": "AUT-23"},
-                {"name": "AUT-24"},
-                {"name": "AUT-25"},
-                {"name": "AUT-26"},
-                {"name": "AUT-27"},
-                {"name": "AUT-28","children":[
-                    {"name": "AFF-281"},
-                    {"name": "AFF-282"},
-                    {"name": "AFF-283"},
-                    {"name": "AFF-284"},
-                    {"name": "AFF-285"},
-                    {"name": "AFF-286"}
+                {"name": "Good day"},
+                {"name": "Bad day"},
+                {"name": "Good day"},
+                {"name": "Good day"},
+                {"name": "Good day"},
+                {"name": "Winter","children":[
+                    {"name": "Low sun"},
+                    {"name": "Low Sun"},
+                    {"name": "Very cold"},
+                    {"name": "Darkness"}
                 ]}
             ]
         },
         {"name": "Growth"},
         {
             "name": "Height","children": [
-                {"name": "AUT-41"},
-                {"name": "AUT-42"},
-                {"name": "AUT-43","children": [
-                    {"name": "AFF-431"},
-                    {"name": "AFF-432"},
-                    {"name": "AFF-433"},
-                    {"name": "AFF-434","children":[
-                        {"name": "ADD-4341"},
-                        {"name": "ADD-4342"},
+                {"name": "Tall"},
+                {"name": "Taller"},
+                {"name": "Tallest","children": [
+                    {"name": "Small"},
+                    {"name": "Medium","children":[
+                        {"name": "Wider"},
+                        {"name": "Widest"},
                     ]}
                 ]},
-                {"name": "AUT-44"}
+                {"name": "Super tall"}
             ]
         },
         {
             "name": "Seedlings","children": [
-                {"name": "AUT-51","children":[
-                    {"name": "AFF-511"},
-                    {"name": "AFF-512"},
-                    {"name": "AFF-513"},
-                    {"name": "AFF-514"},
-                    {"name": "AFF-515"},
-                    {"name": "AFF-516"}
+                {"name": "M.Smith 5/11-1978","children":[
+                    {"name": "J.Doe 12/4 1979"},
+                    {"name": "H.Unter 25/5 1979"},
+                    {"name": "A.Hunter 4/4 1980"},
+                    {"name": "M.Thorn 17/8 1980"},
+                    {"name": "E.West 19/11 1981"}
                 ]},
-                {"name": "AUT-52"},
-                {"name": "AUT-53"},
-                {"name": "AUT-54"},
-                {"name": "AUT-55","children":[
-                    {"name": "AFF-551"},
-                    {"name": "AFF-552"},
-                    {"name": "AFF-553"},
-                    {"name": "AFF-554"}
+                {"name": "H.Hunter 1/5 1982"},
+                {"name": "J.Snark 12/4 1985"},
+                {"name": "O.Issa 8/9 1989"},
+                {"name": "S.Hama 19/2 1995","children":[
+                    {"name": "E.Oliver 11/11 1996"},
+                    {"name": "H.Nue 18/7 1998"},
+                    {"name": "Iggy 24/10 1999"},
+                    {"name": "J.Doe 12/4 2000"}
                 ]},
-                {"name": "AUT-56"},
-                {"name": "AUT-57"},
-                {"name": "AUT-58"},
-                {"name": "AUT-59"},
-                {"name": "AUT-591"},
-                {"name": "AUT-592"},
-                {"name": "AUT-593"},
-                {"name": "AUT-594"},
-                {"name": "AUT-595"},
-                {"name": "AUT-596"}
+               
             ]
         },
         {
             "name": "Events","children": [
-              {"name": "AUT-61","children":[
-                  {"name": "AFF-611"},
-                  {"name": "AFF-612"},
-                  {"name": "AFF-613"},
-                  {"name": "AFF-614","children":[
-                      {"name": "ADD-6141"},
-                      {"name": "ADD-6142"},
+              {"name": "Darkness","children":[
+                  {"name": "Darkness"},
+                  {"name": "Wintertime","children":[
+                      {"name": "Darkness"},
+                      {"name": "Low sun"},
                   ]}
               ]},
-              {"name": "AUT-62"},
-              {"name": "AUT-63"},
-              {"name": "AUT-64"},
-              {"name": "AUT-65"},
-              {"name": "AUT-66"},
-              {"name": "AUT-67"},
-              {"name": "AUT-68"},
-              {"name": "AUT-69"}
+              {"name": "Unknown event"},
+              {"name": "Unknown event"},
+              {"name": "Unknown event"},
+              {"name": "Unknown event"},
+             
             ]
         }
     ]
 };
+//Usable space
+let diameter = 1600;
 
-var diameter = 1400;
-
-var margin = {top: 20, right: 120, bottom: 20, left: 120},
+let margin = {top: 5, right: 120, bottom: 20, left: 120},
     width = diameter,
     height = diameter;
     
-var i = 0,
+let i = 0,
     duration = 350,
     root;
 
-var tree = d3.layout.tree()
-    .size([360, diameter / 2 + 10])
+let tree = d3.layout.tree()
+    .size([270, diameter / 2 - 10])
     .separation(function(a, b) { return (a.parent == b.parent ? 1 : 3) / a.depth; });
 
-var diagonal = d3.svg.diagonal.radial()
+let diagonal = d3.svg.diagonal.radial()
     .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
 
-var svg = d3.select("body").append("svg")
+let svg = d3.select("body").append("svg")
     .attr("width", width )
     .attr("height", height )
   .append("g")
@@ -142,44 +121,61 @@ root = pubs;
 root.x0 = height / 2;
 root.y0 = 5;
 
-//root.children.forEach(collapse); // start with all children collapsed
+root.children.forEach(collapse); // start with all children collapsed
 update(root);
 
 d3.select(self.frameElement).style("height", "1400px");
 
 function update(source) {
 
-  // Compute the new tree layout.
-  var nodes = tree.nodes(root),
+  // Calculate new tree layout.
+  let nodes = tree.nodes(root),
       links = tree.links(nodes);
 
   // Normalize for fixed-depth.
   nodes.forEach(function(d) { d.y = d.depth * 200; });
 
-  // Update the nodes…
-  var node = svg.selectAll("g.node")
+  // Updating nodes
+  let node = svg.selectAll("g.node")
       .data(nodes, function(d) { return d.id || (d.id = ++i); });
 
   // Enter any new nodes at the parent's previous position.
-  var nodeEnter = node.enter().append("g")
+  let nodeEnter = node.enter().append("g")
       .attr("class", "node")
       .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
       .on("click", click);
-
+    
+  //Here im trying to play around with transitions, and colorchanges    
   nodeEnter.append("circle")
       .attr("r", 1e-6)
-      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+      .style("fill", function(d) { return d._children ? "#82c9ce" : "#733430"; })
+      //Testing out a mouseover event, but not sure how i'll make it wok with nodes that have children
+      .on("mouseover", function(){ 
+        d3.select(this)
+            .style("fill", "grey");
+  })
+   .on("mouseout", function(){ 
+        d3.select(this)
+            .style("fill", function(d) { return d._children ? "#82c9ce" : "#733430"; });
+  });
 
+      //Text alignment doesn't really work consistantly
   nodeEnter.append("text")
-      .attr("x", 10)
+      .attr("x", "y")
       .attr("dy", ".35em")
-      .attr("text-anchor", "start")
+      .attr("text-anchor", "middle")
       .attr("transform", function(d) { return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (d.name.length * 8.5)  + ")"; })
       .text(function(d) { return d.name; })
       .style("fill-opacity", 1e-6);
+      
+
+
+    //Testing out hover over effect and onClick-event
+    //Did not work out the way i thought it would
+
 
   // Transition nodes to their new position.
-  var nodeUpdate = node.transition()
+  let nodeUpdate = node.transition()
       .duration(duration)
       .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
 
@@ -192,7 +188,7 @@ function update(source) {
       .attr("transform", function(d) { return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (d.name.length + 50)  + ")"; });
 
   //Transitions i'm not really sure about, will try some different stuff
-  var nodeExit = node.exit().transition()
+  let nodeExit = node.exit().transition()
       .duration(duration)
       //.attr("transform", function(d) { return "diagonal(" + source.y + "," + source.x + ")"; })
       .remove();
@@ -204,7 +200,7 @@ function update(source) {
       .style("fill-opacity", 1e-6);
 
   // Update the links…
-  var link = svg.selectAll("path.link")
+  let link = svg.selectAll("path.link")
       .data(links, function(d) { return d.target.id; });
 
   // Enter any new links at the parent's previous position.
