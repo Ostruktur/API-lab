@@ -12,24 +12,30 @@ body {
   }
   
   .node circle {
-    fill: rgba(13, 211, 46, 0.404);
+    fill: #82c9ce;
     stroke: rgb(10, 39, 1);
     stroke-width: 1.5px;
-    box-shadow: 10px 5px 5px indigo;
     r: 50px;
   }
   
   .node text {
-    fill: rgb(109, 106, 106);
+    fill: #733430;
     align-content: center;
-    font: 15px poppins;
+  /*Trying to align text correctly in the middle of the nodes*/
+  /*some nodes work with the "middle" and some with "right" set as anchor*/
+    text-anchor: middle;
+    font: 18px poppins;
     font-weight: bold; 
     
     
   }
-  
+  .node:hover{
+    stroke-width: 7px;
+    opacity: 1;
+  }
+
   .link {
     fill: none;
-    stroke: rgb(6, 129, 37);
-    stroke-width: 2.5px;
+    stroke: #36cf45;
+    stroke-width: 5px;
   }
