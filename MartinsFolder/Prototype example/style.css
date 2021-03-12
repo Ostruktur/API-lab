@@ -15,6 +15,7 @@ body {
     fill: rgba(13, 211, 46, 0.404);
     stroke: rgb(10, 39, 1);
     stroke-width: 1.5px;
+    box-shadow: 10px 5px 5px indigo;
     r: 50px;
   }
   
