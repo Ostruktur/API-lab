@@ -1,4 +1,4 @@
-# D3
+# API lab library 
 
 D3.js is a JavaScript library for manipulating documents based on data. We choose this library to help us visualize the data that is collected by Tokens from a plant and displayed to the user by colorful animations, charts, etc.
 
@@ -11,7 +11,7 @@ Use link directly:
 ## Usage
 
  in this example, I used 3 circles to display different pieces of information about a plant.
- the first circle demonstrates the water level by the coloe blue.
+ the first circle demonstrates the water level by the color blue.
  the second circle demonstrates the soil vitamins by the color brown.
  the third circle demonstrates sunlight level by the color yellow.
 
@@ -19,7 +19,7 @@ Use link directly:
 
 ## Contributing
 
-the example is from D3 library http://bl.ocks.org/brattonc/5e5ce9beee483220e2f6 
+the example is from the D3 library http://bl.ocks.org/brattonc/5e5ce9beee483220e2f6 
 by Curtis Bratton * Liquid Fill Gauge v1.1
 This example was contributed by:
 Raghdah Bankash

@@ -40,6 +40,7 @@ function loadLiquidFillGauge(elementId, value, config) {
     var locationY = parseInt(gauge.style("height"))/2 - radius;
     var fillPercent = Math.max(config.minValue, Math.min(config.maxValue, value))/config.maxValue;
 
+    // calculation of the wave animation
     var waveHeightScale;
     if(config.waveHeightScaling){
         waveHeightScale = d3.scale.linear()

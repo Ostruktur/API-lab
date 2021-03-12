@@ -6,16 +6,19 @@ md
 )});
   main.variable(observer("chart")).define("chart", ["DOM","width","height","data","d3","invalidation","color"], function(DOM,width,height,data,d3,invalidation,color)
 { 
+  var width = 500;
+  var height = 400;
+
   const context = DOM.context2d(width, height);
   const nodes = data.map(Object.create);
 
   const simulation = d3.forceSimulation(nodes)
       .alphaTarget(0.3) // stay hot
       .velocityDecay(0.1) // low friction
-      .force("x", d3.forceX().strength(0.01))
-      .force("y", d3.forceY().strength(0.01))
+      .force("x", d3.forceX().strength(0.009))
+      .force("y", d3.forceY().strength(0.009))
       .force("collide", d3.forceCollide().radius(d => d.r + 1).iterations(3))
-      .force("charge", d3.forceManyBody().strength((d, i) => i ? 0 : -width * 2 / 3))
+      .force("charge", d3.forceManyBody().strength((d, i) => i ? 0 : -width * 2 / 2))
       .on("tick", ticked);
 
   d3.select(context.canvas)
@@ -23,7 +26,7 @@ md
       .on("pointermove", pointed);
 
   invalidation.then(() => simulation.stop());
-
+  
   function pointed(event) {
     const [x, y] = d3.pointer(event);
     nodes[0].fx = x - width / 2;
@@ -46,7 +49,21 @@ md
 
   return context.canvas;
 }
+
 );
+function draw (){
+  // question 
+  fill (black);
+  text('Do you like apples',40,204);
+  
+  // yes button setup
+  fill (255);
+  circle(170, 200, 20);
+  fill (black);
+  text(255,185,204);
+  }
+  
+
   main.variable(observer("data")).define("data", ["width","d3","n"], function(width,d3,n)
 {
   const k = width / 200;
