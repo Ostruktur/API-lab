@@ -144,18 +144,31 @@ function update(source) {
       .attr("class", "node")
       .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
       .on("click", click);
-
+    
+  //Here im trying to play around with transitions, and colorchanges    
   nodeEnter.append("circle")
       .attr("r", 1e-6)
-      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+      .style("fill", function(d) { return d._children ? "#82c9ce" : "#733430"; })
+      //Testing out a mouseover event, but not sure how i'll make it wok with nodes that have children
+      .on("mouseover", function(){ 
+        d3.select(this)
+            .style("fill", "grey");
+  })
+   .on("mouseout", function(){ 
+        d3.select(this)
+            .style("fill", function(d) { return d._children ? "#82c9ce" : "#733430"; });
+  });
 
+      //Text alignment doesn't really work consistantly
   nodeEnter.append("text")
-      .attr("x", 10)
+      .attr("x", "y")
       .attr("dy", ".35em")
-      .attr("text-anchor", "start")
+      .attr("text-anchor", "middle")
       .attr("transform", function(d) { return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (d.name.length * 8.5)  + ")"; })
       .text(function(d) { return d.name; })
       .style("fill-opacity", 1e-6);
+      
+
 
     //Testing out hover over effect and onClick-event
     //Did not work out the way i thought it would
