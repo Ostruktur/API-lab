@@ -15,6 +15,7 @@ body {
     fill: #82c9ce;
     stroke: rgb(10, 39, 1);
     stroke-width: 1.5px;
+    /* controlling the size of the nodes */
     r: 50px;
   }
   
