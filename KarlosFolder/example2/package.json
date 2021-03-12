@@ -1,0 +1,14 @@
+{
+  "name": "@kerryrodden/sequences-sunburst",
+  "main": "6c87dffb18370ed0@487.js",
+  "version": "487.0.0",
+  "homepage": "https://observablehq.com/@kerryrodden/sequences-sunburst",
+  "author": {
+    "name": "Kerry Rodden",
+    "url": "https://observablehq.com/@kerryrodden"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}
