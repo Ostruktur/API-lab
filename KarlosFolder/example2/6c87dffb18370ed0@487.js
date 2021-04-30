@@ -4,14 +4,8 @@ export default function define(runtime, observer) {
   const fileAttachments = new Map([["visit-sequences@1.csv",new URL("./files/4b8bc441afab87356f7b5cc5aef3130f4ca634aaae3a46ba7c0f7950b152bc9cdd9bbddae444d694f3e3b4d43587419a17eb0bd5fbd340ce6d6c7b31907bfc7b",import.meta.url)]]);
   main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
   main.variable(observer()).define(["md"], function(md){return(
-md/*`# Sequences Sunburst
+md
 
-This example shows how it is possible to use a [sunburst visualization](https://observablehq.com/@d3/sunburst)  with data that describes sequences of events. Hover over the segments to see the corresponding sequences.
-
-A good use case is to summarize navigation paths through a web site or app, as in the sample data file (which is attached to the \`csv\` cell). Where a funnel lets you understand a single pre-selected path, this allows you to see all possible paths. For example, you might want to compare visits that start directly on a product page (e.g. after landing there from a search engine) to visits where users arrive on the site's home page and navigate from there.
-
-See also: the non-radial counterpart to this, [Sequences Icicle](/@kerryrodden/sequences-icicle).
-`*/
 )});
   main.variable(observer("breadcrumb")).define("breadcrumb", ["d3","breadcrumbWidth","breadcrumbHeight","sunburst","breadcrumbPoints","color"], function(d3,breadcrumbWidth,breadcrumbHeight,sunburst,breadcrumbPoints,color)
 {
