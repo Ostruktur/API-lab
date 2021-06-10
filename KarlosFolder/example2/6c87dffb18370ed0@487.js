@@ -48,7 +48,7 @@ md
   main.variable(observer("viewof sunburst")).define("viewof sunburst", ["partition","data","d3","radius","width","color","arc","mousearc"], function(partition,data,d3,radius,width,color,arc,mousearc)
 {
   const root = partition(data);
-  const svg = d3.create("svg");
+  const svg = d3.create("svg"); // this function creates and selects detached element 
   // Make this into a view, so that the currently hovered sequence is available to the breadcrumb
   const element = svg.node();
   element.value = { sequence: [], percentage: 0.0 };
@@ -138,22 +138,7 @@ md
 );
   main.variable(observer("sunburst")).define("sunburst", ["Generators", "viewof sunburst"], (G, _) => G.input(_));
   main.variable(observer()).define(["md"], function(md){return(
-md/*`
-Features:
-
-* works with data that is in a CSV format (you don't need to pre-generate a hierarchical JSON file, unless your data file is very large) - in Observable, you can just replace the file that's attached to the \`csv\` cell
-* interactive breadcrumb trail helps to emphasize the sequence, so that it is easy for a first-time user to understand what they are seeing
-* percentages are shown explicitly, to help overcome the distortion of the data that occurs when using a radial presentation
-
-If you want to reuse this with your own data, here are some tips for generating the CSV file:
-
-* no header is required (but it's OK if one is present)
-* use a hyphen to separate the steps in the sequence
-* every sequence should have an "end" marker as the last element, *unless* it has been truncated because it is longer than the maximum sequence length (6, in the example). The purpose of the "end" marker is to distinguish a true end point (e.g. the user left the site) from an end point that has been forced by truncation.
-* each line should be a complete path from root to leaf - don't include counts for intermediate steps. For example, include "home-search-end" and "home-search-product-end" but not "home-search" - the latter is computed by the partition layout, by adding up the counts of all the sequences with that prefix.
-* to keep the number of permutations low, use a small number of unique step names, and a small maximum sequence length. Larger numbers of either of these will lead to a very large CSV that will be slow to process.
-* keep the step names short
-`*/
+md
 )});
   main.variable(observer("csv")).define("csv", ["d3","FileAttachment"], async function(d3,FileAttachment){return(
 d3.csvParseRows(await FileAttachment("visit-sequences@1.csv").text())
@@ -163,9 +148,10 @@ buildHierarchy(csv)
 )});
   main.variable(observer("partition")).define("partition", ["d3","radius"], function(d3,radius){return(
 data =>
+// this function creates a new partition layout with the default settings
   d3.partition().size([2 * Math.PI, radius * radius])(
     d3
-      .hierarchy(data)
+      .hierarchy(data) //constructs a root node from hierarchical data
       .sum(d => d.value)
       .sort((a, b) => b.value - a.value)
   )
